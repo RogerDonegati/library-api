@@ -1,10 +1,26 @@
 import { Request, Response } from 'express';
+import { Op } from 'sequelize';
 import ProductModel from '../models/productModel';
 
 class ProductController {
     async findAll(req: Request, res: Response) {
         try {
-            const products = await ProductModel.findAll();
+            const { title, book, movie, tv_show } = req.body;
+            const where = {};
+            if (typeof book !== 'undefined') {
+                Object.assign(where, { book });
+            }
+            if (typeof movie !== 'undefined') {
+                Object.assign(where, { movie });
+            }
+            if (typeof tv_show !== 'undefined') {
+                Object.assign(where, { tv_show });
+            }
+            if (typeof title !== 'undefined') {
+                Object.assign(where, { title: { [Op.like]: `${title}%` } });
+            }
+
+            const products = await ProductModel.findAll({ where });
             if (products.length > 0) {
                 return res.status(200).json(products);
             }
