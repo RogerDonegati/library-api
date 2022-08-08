@@ -38,4 +38,5 @@ Saiba Mais de como realizar as instalações em:<br>
 <h2>Considerações:</h2>
 - Tempo de desenvolvimento: ~15h<br>
 - na raiz do projeto há um arquivo "Insomnia.json" que pode ser importado no seu insomnia e importado para ter todas as rotas e comandos ja preenchidos, faciliando os testes<br>
+- Há também uma pasta "diagrams" com alguns diagramas simplificados sobre o projeto.<br>
 - Ao finalizar o projeto me arrependi de utilizar a biblioteca "sequelize" pelo seu baixo nivel de suporte ao typescript, acredito que a melhor opção teria sido a "typeorm"<br>
