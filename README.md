@@ -2,7 +2,7 @@
 
 <h2>Dependências:</h2>
 Para inicializar o projeto você precisará das seguintes ferramentas instaladas e configuradas:<br>
-&nbsp&nbsp -node<br>
+&nbsp&nbsp-node<br>
 &nbsp&nbsp-npm<br>
 &nbsp&nbsp-*Mysql Server<br>
 &nbsp&nbsp-*Mysql Workbench<br>
@@ -31,7 +31,7 @@ Saiba Mais de como realizar as instalações em:<br>
 4. Edite o arquivo .env com os seus dados do MySQL WorkBench<br>
 5. (optional) rode o comando "npm run seed" no terminal para inserir alguns registros no banco de dados<br>
 6. rode o comando "npm run compile" para inicializar o projeto<br>
-7. (optional) há também o comando "run test" para rodar os testes automatizados<br>
+7. (optional) há também o comando "npm run test" para rodar os testes automatizados<br>
 <br><br>
 
 
