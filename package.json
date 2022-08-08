@@ -1,0 +1,44 @@
+{
+    "name": "library-api",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest",
+        "test_dev": "jest --watchAll --noStackTrace",
+        "seed": "npx tsc && node ./build/db/seeds/my_custom_seeder.js",
+        "dev": "nodemon src/index.ts",
+        "compile": "npx tsc && node build/index.js"
+    },
+    "author": "Roger Donegati",
+    "license": "ISC",
+    "dependencies": {
+        "dotenv": "^16.0.1",
+        "express": "^4.18.1",
+        "mysql2": "^2.3.3",
+        "sequelize": "^6.21.3",
+        "supertest": "^6.2.4",
+        "yup": "^0.32.11"
+    },
+    "devDependencies": {
+        "@types/config": "^3.3.0",
+        "@types/express": "^4.17.13",
+        "@types/jest": "^28.1.6",
+        "@types/node": "^18.6.3",
+        "@types/supertest": "^2.0.12",
+        "@typescript-eslint/eslint-plugin": "^5.32.0",
+        "@typescript-eslint/parser": "^5.32.0",
+        "eslint": "^8.21.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "jest": "^28.1.3",
+        "nodemon": "^2.0.19",
+        "prettier": "^2.7.1",
+        "sequelize-cli": "^6.4.1",
+        "ts-jest": "^28.0.7",
+        "ts-node": "^10.9.1",
+        "typescript": "^4.7.4"
+    }
+}

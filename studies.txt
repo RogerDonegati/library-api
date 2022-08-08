@@ -1,0 +1,89 @@
+Arquivo auxiliar para estudo e consulta de comandos js/ts
+
+-------------------------------------------------
+-------------- Init + Dependencias --------------
+npm init -y
+npm install express config dotenv sequelize mariadb
+npm install typescript @types/express @types/node @types/config ts-node nodemon sequelize-cli -D
+
+npm install jest ts-jest @types/jest @types/supertest -D
+npx ts-jest config:init
+npx jest
+
+
+-------------------------------------------------
+-------------------- ESLint ---------------------
+.editorconfig (VSCode Extension)
+.eslintrc.js
+npx eslint --init (selecionado airbnb)
+
+
+
+-------------------------------------------------
+---------------- Setup Typescript ---------------
+npx tsc --init
+	"outDir": "build",
+	"rootDir": "src",
+npx tsc
+
+
+
+-------------------------------------------------
+---------------- Setup Typescript ---------------
+package.json
+	"scripts":{
+        "dev": "cls && nodemon src/app.ts",
+        "compile": "cls && npx tsc && node build/app.js"
+	}
+(aparentemente o nodemon roda ts hoje em dia)
+
+
+-------------------------------------------------
+---------------- Setup Sequelize ----------------
+.sequelizerc
+package.json
+    "scripts": {
+        "seed": "cls && npx tsc && node ./build/db/seeds/my_custom_seeder.js"
+    },
+npx sequelize-cli model:generate --name Products --attributes title:string
+npx sequelize-cli model:generate --name Customers --attributes name:string
+(seeds nativos dão conflito com o typescript)
+npx sequelize seed:generate --name create_products
+npx sequelize-cli db:seed:all
+
+
+
+-------------------------------------------------
+------------------- Setup Jest ------------------
+jest.config.js
+package.json
+    "scripts": {
+        "test": "jest",
+        "test_dev": "jest --watchAll --noStackTrace"
+    },
+
+
+-------------------------------------------------
+--------------------- Extra ---------------------
+Refs:
+    Docs:
+        https://expressjs.com/en/guide/routing.html
+        https://sequelize.org/docs/v6/other-topics/typescript/
+        https://github.com/jquense/yup
+        https://jestjs.io/docs/getting-started
+
+    Gits:
+        https://github.com/TomDoesTech/REST-API-Tutorial-Updated
+        https://github.com/luizomf/curso-js/tree/master/api_rest
+        https://github.com/RogerDonegati/semanaomnistack11
+        https://github.com/luizomf/typescript-jest-test
+        https://github.com/danieldeandradelopes/write-test-jest-nodejs
+
+    Youtubes:
+        https://www.youtube.com/watch?v=g1K-MYOE65M&ab_channel=BrunoBraga
+        https://www.youtube.com/watch?v=VyEKwp6Q4fY&ab_channel=willjw3
+        https://www.youtube.com/watch?v=BWUi6BS9T5Y&ab_channel=TomDoesTech
+        https://www.youtube.com/watch?v=goUbHgAzPCs&t=652s&ab_channel=TomDoesTech
+        https://www.youtube.com/watch?v=KgnJNJk9-to&ab_channel=TomDoesTech
+        https://www.youtube.com/watch?v=QPE7L9b1bms&t=825s&ab_channel=ProgrammingKnowledge
+

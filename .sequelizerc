@@ -1,0 +1,9 @@
+const { resolve } = require('path');
+
+// used old exports feature because of sequelize dependence
+module.exports = {
+    config: resolve(__dirname, 'src', 'db', 'database.js'),
+    'models-path': resolve(__dirname, 'src', 'models'),
+    'migrations-path': resolve(__dirname, 'src', 'db', 'migrations'),
+    'seeders-path': resolve(__dirname, 'src', 'db', 'seeds'),
+};
