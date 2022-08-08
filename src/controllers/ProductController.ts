@@ -5,16 +5,16 @@ import ProductModel from '../models/productModel';
 class ProductController {
     async findAll(req: Request, res: Response) {
         try {
-            const { title, book, movie, tv_show } = req.body;
+            const { title, book, movie, tv_show } = req.query;
             const where = {};
             if (typeof book !== 'undefined') {
-                Object.assign(where, { book });
+                Object.assign(where, { book: (book === 'true') });
             }
             if (typeof movie !== 'undefined') {
-                Object.assign(where, { movie });
+                Object.assign(where, { movie: (book === 'true') });
             }
             if (typeof tv_show !== 'undefined') {
-                Object.assign(where, { tv_show });
+                Object.assign(where, { tv_show: (book === 'true') });
             }
             if (typeof title !== 'undefined') {
                 Object.assign(where, { title: { [Op.like]: `${title}%` } });
